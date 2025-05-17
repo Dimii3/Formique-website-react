@@ -1,7 +1,35 @@
 import BackgroundLight from "./BackgroundLight";
 import SectionHeading from "./SectionHeading";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
+  useGSAP(() => {
+    gsap.from(
+      [
+        ".about-left img",
+        ".about-right .about__subtitle",
+        ".about-right .about__heading",
+        ".about-right .about__text",
+      ],
+      {
+        scrollTrigger: {
+          trigger: ".about",
+          start: "top 60%",
+          end: "bottom bottom",
+          scrub: 1,
+        },
+        y: 50,
+        opacity: 0,
+        filter: "blur(10px)",
+        stagger: 0.1,
+      }
+    );
+  });
+
   return (
     <>
       <BackgroundLight className="about-background" />

@@ -34,12 +34,22 @@ export default function Logos() {
     <section className="logos">
       <motion.ul animate={logosAnimation} className="logos__list">
         {logos.map((logo) => (
-          <img src={logo.src} alt={logo.alt} className="logos__image" />
+          <img
+            key={logo.alt}
+            src={logo.src}
+            alt={logo.alt}
+            className="logos__image"
+          />
         ))}
       </motion.ul>
       <motion.ul animate={logosAnimation} className="logos__list">
         {logos.map((logo) => (
-          <img src={logo.src} alt={logo.alt} className="logos__image" />
+          <img
+            key={logo.alt}
+            src={logo.src}
+            alt={logo.alt}
+            className="logos__image"
+          />
         ))}
       </motion.ul>
     </section>

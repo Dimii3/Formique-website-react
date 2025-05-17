@@ -1,7 +1,43 @@
 import BackgroundLight from "./BackgroundLight";
 import SectionHeading from "./SectionHeading";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Products() {
+  useGSAP(() => {
+    gsap.utils.toArray(".product-item").forEach((item: any) => {
+      gsap.from(item, {
+        scrollTrigger: {
+          trigger: item,
+          start: "top 60%",
+          end: "bottom bottom",
+          scrub: 1,
+          markers: true,
+        },
+        y: 50,
+        opacity: 0,
+        filter: "blur(10px)",
+        stagger: 0.2,
+      });
+    });
+    gsap.utils.toArray(".product-item__text").forEach((item: any) => {
+      gsap.from(item, {
+        scrollTrigger: {
+          trigger: item,
+          start: "top 60%",
+          end: "bottom 60%",
+          scrub: 1,
+        },
+        y: 50,
+        opacity: 0,
+        filter: "blur(10px)",
+      });
+    });
+  });
+
   return (
     <>
       <BackgroundLight className="products-background"></BackgroundLight>
@@ -51,7 +87,7 @@ export default function Products() {
             </div>
           </div>
           <div className="products-content--bottom__right">
-            <p className="text">
+            <p className="text product-item__text">
               Each of our sculptures is a fusion of artistic vision and
               masterful technique. Crafted by hand using premium materials —
               including bronze, marble, clay, and resin — our pieces are
@@ -73,7 +109,7 @@ export default function Products() {
             </div>
           </div>
           <div className="products-content--bottom__right">
-            <p className="text">
+            <p className="text product-item__text">
               Whether you're seeking a lifelike portrait, an abstract
               centerpiece, or a symbolic installation, every detail is shaped
               with precision, care, and a deep respect for the craft. No two

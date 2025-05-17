@@ -1,12 +1,53 @@
+import gsap from "gsap";
 import BackgroundLight from "./BackgroundLight";
 import BackgroundWave from "./BackgroundWave";
+import Button from "./Button";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
+  useGSAP(() => {
+    gsap.from(
+      [".header-left__heading", ".header-left__text", ".header-left__cta"],
+      {
+        y: 50,
+        opacity: 0,
+        filter: "blur(10px)",
+        stagger: 0.1,
+      }
+    );
+    gsap.from(".header-left__subtitles span", {
+      y: 50,
+      opacity: 0,
+      filter: "blur(10px)",
+      stagger: 0.3,
+      duration: 0.6,
+      delay: 0.6,
+    });
+    gsap.from(".header-right img", {
+      filter: "blur(10px)",
+      duration: 2,
+    });
+
+    gsap.to(".header-left", {
+      scrollTrigger: {
+        trigger: ".header-left",
+        start: "center 50%",
+        end: "bottom 20%",
+        scrub: 1,
+      },
+      y: -50,
+      duration: 2,
+    });
+  });
   return (
     <>
       <BackgroundLight className="header-background"></BackgroundLight>
       <BackgroundWave className="header-background__wave"></BackgroundWave>
-      <header className="header container">
+      <header className="header  header-container">
         <div className="header-left">
           <div className="header-left__subtitles">
             <span>
@@ -28,9 +69,8 @@ export default function Header() {
             Bring your vision to life with one-of-a-kind sculptures tailored to
             your imagination, style, and space.
           </p>
-          <a href="#" className="header-left__cta">
-            Explore it
-          </a>
+
+          <Button className="header-left__cta">Shape Your Vision</Button>
         </div>
         <div className="header-right">
           <img src="/header-image.png" alt="sculpture of a man" />

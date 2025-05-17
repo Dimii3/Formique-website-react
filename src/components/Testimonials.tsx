@@ -64,18 +64,20 @@ export default function Testimonials() {
         >
           {testimonialsData.map((testimonial) => (
             <TestimonialCard
+              key={testimonial.author}
               text={testimonial.text}
               author={testimonial.author}
               city={testimonial.city}
             ></TestimonialCard>
           ))}
-        </motion.div>{" "}
+        </motion.div>
         <motion.div
           animate={testimonialsAnimationTop}
           className="testimonials-content"
         >
           {testimonialsData.map((testimonial) => (
             <TestimonialCard
+              key={testimonial.author}
               text={testimonial.text}
               author={testimonial.author}
               city={testimonial.city}
@@ -90,6 +92,7 @@ export default function Testimonials() {
         >
           {testimonialsData.map((testimonial) => (
             <TestimonialCard
+              key={testimonial.author}
               text={testimonial.text}
               author={testimonial.author}
               city={testimonial.city}
@@ -102,6 +105,7 @@ export default function Testimonials() {
         >
           {testimonialsData.map((testimonial) => (
             <TestimonialCard
+              key={testimonial.author}
               text={testimonial.text}
               author={testimonial.author}
               city={testimonial.city}

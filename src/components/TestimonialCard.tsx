@@ -13,7 +13,7 @@ export default function TestimonialCard({
       <hr />
       <div className="testimonial-card-bottom">
         <p className="testimonial-card__author">
-          <div className="square"></div>
+          <span className="square"></span>
           {author}
         </p>
         <p className="testimonial-card__city">{city}</p>
