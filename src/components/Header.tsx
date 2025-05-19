@@ -61,9 +61,7 @@ export default function Header() {
             </span>
           </div>
           <h1 className="header-left__heading">
-            Custom Sculptures
-            <br />
-            <span>Handcrafted</span> to Inspire
+            Custom Sculptures <span>Handcrafted</span> to Inspire
           </h1>
           <p className="header-left__text">
             Bring your vision to life with one-of-a-kind sculptures tailored to

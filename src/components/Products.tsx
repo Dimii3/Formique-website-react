@@ -15,7 +15,6 @@ export default function Products() {
           start: "top 60%",
           end: "bottom bottom",
           scrub: 1,
-          markers: true,
         },
         y: 50,
         opacity: 0,
