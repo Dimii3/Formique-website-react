@@ -19,22 +19,24 @@ export default function Products() {
         y: 50,
         opacity: 0,
         filter: "blur(10px)",
-        stagger: 0.2,
       });
     });
-    gsap.utils.toArray(".product-item__text").forEach((item: any) => {
-      gsap.from(item, {
-        scrollTrigger: {
-          trigger: item,
-          start: "top 60%",
-          end: "bottom 60%",
-          scrub: 1,
-        },
-        y: 50,
-        opacity: 0,
-        filter: "blur(10px)",
+    gsap.utils
+      .toArray(".products-content--bottom .product-item__text")
+      .forEach((item: any) => {
+        gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            end: "bottom 50%",
+            scrub: 1,
+            markers: true,
+          },
+          y: 50,
+          opacity: 0,
+          filter: "blur(10px)",
+        });
       });
-    });
   });
 
   return (
