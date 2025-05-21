@@ -1,3 +1,4 @@
+import contactImage from "../assets/images/contact-image.png";
 import BackgroundWave from "./BackgroundWave";
 import SectionHeading from "./SectionHeading";
 
@@ -5,7 +6,7 @@ export default function Contact() {
   return (
     <>
       <BackgroundWave className="contact__wave"></BackgroundWave>
-      <section className="contact container">
+      <section id="contact" className="contact container">
         <SectionHeading
           subtitle="Contact"
           heading="Get in Touch with Us"
@@ -17,7 +18,7 @@ export default function Contact() {
           <div className="contact-left">
             <img
               className="contact-left__image"
-              src="/contact-image.png"
+              src={contactImage}
               alt="Sculpture"
             />
           </div>

@@ -1,3 +1,4 @@
+import aboutImage from "../assets/images/about-image.png";
 import BackgroundLight from "./BackgroundLight";
 import SectionHeading from "./SectionHeading";
 import gsap from "gsap";
@@ -33,9 +34,9 @@ export default function About() {
   return (
     <>
       <BackgroundLight className="about-background" />
-      <section className="about container">
+      <section id="about" className="about container">
         <div className="about-left">
-          <img src="/about-image.png" alt="sculpture" />
+          <img src={aboutImage} alt="sculpture" />
         </div>
         <div className="about-right">
           <SectionHeading

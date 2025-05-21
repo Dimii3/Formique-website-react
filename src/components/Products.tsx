@@ -1,3 +1,8 @@
+import prodImage1 from "../assets/images/prod-1.png";
+import prodImage2 from "../assets/images/prod-2.png";
+import prodImage3 from "../assets/images/prod-3.png";
+import prodImage4 from "../assets/images/prod-4.png";
+
 import BackgroundLight from "./BackgroundLight";
 import SectionHeading from "./SectionHeading";
 import gsap from "gsap";
@@ -30,7 +35,6 @@ export default function Products() {
             start: "top 90%",
             end: "bottom 50%",
             scrub: 1,
-            markers: true,
           },
           y: 50,
           opacity: 0,
@@ -42,7 +46,7 @@ export default function Products() {
   return (
     <>
       <BackgroundLight className="products-background"></BackgroundLight>
-      <section className="products container">
+      <section id="products" className="products container">
         <SectionHeading
           subtitle="Sculptures"
           heading="Tailored Sculptures for Every Purpose"
@@ -54,7 +58,7 @@ export default function Products() {
         <div className="products-content">
           <div className="product-item">
             <div className="product-item__image">
-              <img src="prod-1.png" alt="Sculpture" />
+              <img src={prodImage1} alt="Sculpture" />
             </div>
             <div className="product-item__bottom">
               <span className="product-item__number">
@@ -65,7 +69,7 @@ export default function Products() {
           </div>
           <div className="product-item">
             <div className="product-item__image">
-              <img src="prod-2.png" alt="Sculpture" />
+              <img src={prodImage2} alt="Sculpture" />
             </div>
             <div className="product-item__bottom">
               <span className="product-item__number">
@@ -78,7 +82,7 @@ export default function Products() {
         <div className="products-content--bottom">
           <div className="product-item">
             <div className="product-item__image">
-              <img src="prod-4.png" alt="Sculpture" />
+              <img src={prodImage3} alt="Sculpture" />
             </div>
             <div className="product-item__bottom">
               <span className="product-item__number">
@@ -100,7 +104,7 @@ export default function Products() {
         <div className="products-content--bottom">
           <div className="product-item product-item--secondary">
             <div className="product-item__image">
-              <img src="prod-5.png" alt="Sculpture" />
+              <img src={prodImage4} alt="Sculpture" />
             </div>
             <div className="product-item__bottom">
               <span className="product-item__number">

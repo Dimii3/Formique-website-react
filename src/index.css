@@ -60,14 +60,14 @@ img {
 
 .subtitle {
   display: inline-block;
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  margin-bottom: 1.6rem;
   color: var(--color-text);
-  border: var(--main-color) solid 2px;
-  padding: 1rem 3.2rem;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   font-weight: 500;
+  padding: 1rem 3.2rem;
+  border: var(--main-color) solid 2px;
   border-bottom-left-radius: 2rem;
   border-top-right-radius: 2rem;
-  margin-bottom: 1.6rem;
 }
 
 .section-heading {
@@ -91,14 +91,13 @@ img {
   border-top-right-radius: 2rem;
   padding: 0.2rem;
   overflow: hidden;
-
   z-index: 1;
 }
 
 .button-wrapper::before {
   position: absolute;
   content: "";
-  top: -220%;
+  top: -205%;
   left: 45%;
   width: 4.5rem;
   height: 30rem;
@@ -112,7 +111,6 @@ img {
   border-bottom-left-radius: 2rem;
   border-top-right-radius: 2rem;
   animation: border-spin 8s linear infinite;
-
   animation-play-state: running;
   opacity: 1;
   transition: opacity 0.3s ease;
@@ -120,23 +118,21 @@ img {
 }
 
 .button-cta {
+  display: inline-block;
   padding: 1.6rem 4.8rem;
   align-self: flex-start;
-
   font-size: clamp(1.2rem, 3vw, 1.6rem);
   font-family: inherit;
   border: none;
-
   background: #151515;
   color: var(--color-text);
   font-weight: 500;
   letter-spacing: 0.3px;
   border-bottom-left-radius: 2rem;
   border-top-right-radius: 2rem;
-
-  cursor: pointer;
   z-index: 1;
   transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
 }
 
 .button-cta:hover {
@@ -243,14 +239,6 @@ img {
 }
 
 /* HEADER  */
-/* 
-.header {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  gap: 12rem;
-  height: auto;
-} */
 
 .header-container {
   position: relative;
@@ -353,6 +341,7 @@ img {
 }
 
 /* LOGOS  */
+
 .logos {
   position: relative;
   display: flex;
@@ -393,8 +382,6 @@ img {
 .logos__image {
   height: 3.2rem;
   object-fit: contain;
-  /* width: 100%; */
-
   padding: 0 7.2rem;
 }
 
@@ -477,8 +464,6 @@ img {
   width: 30%;
 }
 
-/* .product-item {} */
-
 .product-item--secondary {
   order: 1;
 }
@@ -560,7 +545,6 @@ img {
   position: relative;
   padding: 0.2rem;
   height: fit-content;
-  /* width: %; */
   background: var(--main-dark);
   border-bottom-left-radius: 2rem;
   border-top-right-radius: 2rem;
@@ -673,7 +657,6 @@ img {
 .testimonial-card__text {
   color: var(--main-dark);
   text-align: left;
-
   font-size: clamp(1.2rem, 3vw, 1.5rem);
   font-weight: 500;
 }
@@ -1144,12 +1127,21 @@ img {
     max-width: 100%;
   }
 
+  .logos__image {
+    height: 2.4rem;
+    object-fit: contain;
+    padding: 0 3.2rem;
+  }
+
   .process-item {
     height: 30rem;
   }
   .products__heading,
   .testimonials__heading {
     max-width: 100%;
+  }
+  .testimonial-card {
+    width: 30rem;
   }
 
   .button-wrapper::before {

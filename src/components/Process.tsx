@@ -26,7 +26,7 @@ const processItems = [
 
 export default function Process() {
   return (
-    <section className="process container">
+    <section id="process" className="process container">
       <SectionHeading
         subtitle="Our Process"
         heading="From Concept to Completion"

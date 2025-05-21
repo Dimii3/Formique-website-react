@@ -3,15 +3,17 @@ import React from "react";
 export default function Button({
   children,
   className,
+  href = "#",
 }: {
   children?: React.ReactNode;
   className?: string;
+  href?: string;
 }) {
   return (
     <div className={`button-wrapper ${className ? className : ""}`}>
-      <button className="button-cta" data-content={children}>
+      <a href={href} className="button-cta">
         {children}
-      </button>
+      </a>
     </div>
   );
 }

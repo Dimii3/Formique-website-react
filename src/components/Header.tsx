@@ -1,9 +1,10 @@
-import gsap from "gsap";
 import BackgroundLight from "./BackgroundLight";
 import BackgroundWave from "./BackgroundWave";
 import Button from "./Button";
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import headerImage from "../assets/images/header-image.png";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -68,10 +69,16 @@ export default function Header() {
             your imagination, style, and space.
           </p>
 
-          <Button className="header-left__cta">Shape Your Vision</Button>
+          <Button href="#process" className="header-left__cta">
+            Shape Your Vision
+          </Button>
         </div>
         <div className="header-right">
-          <img src="/header-image.png" alt="sculpture of a man" />
+          <img
+            fetchPriority="high"
+            src={headerImage}
+            alt="sculpture of a man"
+          />
         </div>
       </header>
     </>

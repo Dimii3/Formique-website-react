@@ -32,7 +32,7 @@ export default function Logos() {
   };
   return (
     <section className="logos">
-      <motion.ul animate={logosAnimation} className="logos__list">
+      <motion.div animate={logosAnimation} className="logos__list">
         {logos.map((logo) => (
           <img
             key={logo.alt}
@@ -41,8 +41,8 @@ export default function Logos() {
             className="logos__image"
           />
         ))}
-      </motion.ul>
-      <motion.ul animate={logosAnimation} className="logos__list">
+      </motion.div>
+      <motion.div animate={logosAnimation} className="logos__list">
         {logos.map((logo) => (
           <img
             key={logo.alt}
@@ -51,7 +51,7 @@ export default function Logos() {
             className="logos__image"
           />
         ))}
-      </motion.ul>
+      </motion.div>
     </section>
   );
 }

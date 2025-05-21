@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import logo from "../assets/images/logo-formique.svg";
 
 const links = [
-  { name: "About", href: "#" },
-  { name: "Products", href: "#" },
-  { name: "Process", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "About", href: "#about" },
+  { name: "Products", href: "#products" },
+  { name: "Process", href: "#process" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Nav() {
@@ -36,6 +36,7 @@ export default function Nav() {
       <button
         onClick={toggleMenu}
         className={`nav-btn ${isOpen ? "active" : ""}`}
+        aria-label="Menu Button"
       >
         <div className="nav-btn__line"></div>
         <div className="nav-btn__line"></div>
