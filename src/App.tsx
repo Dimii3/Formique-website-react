@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import headerImage from "../src/assets/images/header-image.png";
+import { useEffect, useState } from "react";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -11,6 +12,8 @@ import Testimonials from "./components/Testimonials";
 import Lenis from "lenis";
 
 export default function App() {
+  const [isHeaderLoaded, setIsHeaderLoaded] = useState(false);
+
   // SMOOTH SCROLL
   useEffect(() => {
     const lenis = new Lenis();
@@ -20,17 +23,35 @@ export default function App() {
     }
     requestAnimationFrame(raf);
   }, []);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = headerImage;
+    img.onload = () => setIsHeaderLoaded(true);
+  }, []);
+
   return (
     <>
-      <Nav></Nav>
-      <Header></Header>
-      <Logos></Logos>
-      <About></About>
-      <Products></Products>
-      <Process></Process>
-      <Testimonials></Testimonials>
-      <Contact></Contact>
-      <Footer></Footer>
+      <Nav />
+      <Header
+        imageHeader={headerImage}
+        onImageLoaded={() => setIsHeaderLoaded(true)}
+        isImageLoaded={isHeaderLoaded}
+      />
+      <Logos />
+      <About />
+      <Products />
+      <Process />
+      <Testimonials />
+      <Contact />
+      <Footer />
+      {!isHeaderLoaded && (
+        <div className={`header-preloader ${isHeaderLoaded ? "loaded" : ""}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      )}
     </>
   );
 }

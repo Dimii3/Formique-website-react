@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Products() {
   useGSAP(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     gsap.utils.toArray(".product-item").forEach((item: any) => {
       gsap.from(item, {
         scrollTrigger: {
@@ -20,6 +21,7 @@ export default function Products() {
           start: "top 60%",
           end: "bottom bottom",
           scrub: 1,
+          once: true,
         },
         y: 50,
         opacity: 0,
@@ -35,6 +37,7 @@ export default function Products() {
             start: "top 90%",
             end: "bottom 50%",
             scrub: 1,
+            once: true,
           },
           y: 50,
           opacity: 0,

@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   useGSAP(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     gsap.from(
       [
         ".about-left img",
@@ -22,6 +23,7 @@ export default function About() {
           start: "top 60%",
           end: "bottom bottom",
           scrub: 1,
+          once: true,
         },
         y: 50,
         opacity: 0,
