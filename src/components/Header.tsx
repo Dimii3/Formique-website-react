@@ -51,7 +51,6 @@ export default function Header({
           start: "center 50%",
           end: "bottom 20%",
           scrub: 1,
-          once: true,
         },
         y: -50,
         duration: 2,

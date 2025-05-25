@@ -20,10 +20,9 @@ export default function About() {
       {
         scrollTrigger: {
           trigger: ".about",
-          start: "top 60%",
+          start: "top+=100 center",
           end: "bottom bottom",
           scrub: 1,
-          once: true,
         },
         y: 50,
         opacity: 0,

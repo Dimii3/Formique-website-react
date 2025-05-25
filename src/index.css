@@ -388,6 +388,13 @@ img {
   height: auto;
 }
 
+.header-right img {
+  height: clamp(30rem, 50vw, 77rem);
+  object-fit: cover;
+  border-bottom-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
 /* LOGOS  */
 
 .logos {
@@ -972,7 +979,7 @@ img {
 
 @media screen and (max-width: 976px) {
   .header-left {
-    padding-top: 3rem;
+    padding-top: 6rem;
     justify-content: center;
   }
 
@@ -1053,6 +1060,10 @@ img {
 
   .nav__link-item {
     height: auto;
+  }
+
+  .nav__links {
+    gap: 1.6rem;
   }
 
   .nav__link-item a {
@@ -1169,6 +1180,10 @@ img {
   }
   .section-heading {
     max-width: 85%;
+  }
+
+  .header-left {
+    padding-top: 2rem;
   }
   .header-left__heading {
     max-width: 100%;

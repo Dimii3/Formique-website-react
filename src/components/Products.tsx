@@ -2,7 +2,6 @@ import prodImage1 from "../assets/images/prod-1.png";
 import prodImage2 from "../assets/images/prod-2.png";
 import prodImage3 from "../assets/images/prod-3.png";
 import prodImage4 from "../assets/images/prod-4.png";
-
 import BackgroundLight from "./BackgroundLight";
 import SectionHeading from "./SectionHeading";
 import gsap from "gsap";
@@ -18,10 +17,9 @@ export default function Products() {
       gsap.from(item, {
         scrollTrigger: {
           trigger: item,
-          start: "top 60%",
+          start: "top-=100 center",
           end: "bottom bottom",
           scrub: 1,
-          once: true,
         },
         y: 50,
         opacity: 0,
@@ -34,10 +32,9 @@ export default function Products() {
         gsap.from(item, {
           scrollTrigger: {
             trigger: item,
-            start: "top 90%",
-            end: "bottom 50%",
+            start: "top-=200 center",
+            end: "bottom+=300 bottom",
             scrub: 1,
-            once: true,
           },
           y: 50,
           opacity: 0,
